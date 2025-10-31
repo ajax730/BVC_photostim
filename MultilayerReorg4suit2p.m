@@ -7,6 +7,8 @@ function [params] = MultilayerReorg4suit2p
 %layers, this function will produce 3 files with extensions *.h5. The
 %fluorescence data will be found under the fieldname 'Data' in each *.h5
 %file.
+%Inputs by user:
+%Define units to analyze (example) - 10:51 OR [10:24,26:51]
 
 try
     [nameOfFile,filePath] = uigetfile('*.mesc','Select the MESc file to proceed...');
