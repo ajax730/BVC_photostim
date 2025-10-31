@@ -1,9 +1,16 @@
-function [params] = multilayer_reorg_4suit(filename,units) 
+function [params] = multilayer_reorg_4suit
+
 %%% ADD THESE VARIABLES %%%
     %filename = 'n:\DATA\Betanitas\!Mouse Gramophon\2_Imaging\photostim\877\2022_10_14_mouse877_behaviour_test_selected.mesc';    
     %templatefile = 'n:\DATA\Betanitas\!Mouse Gramophon\2_Imaging\photostim\877\2022_10_14_mouse877_layer_demixing_template.mesc';
     %units = 1:189;
 %%% ------------------- %%%
+
+    [nameOfFile,filePath] = uigetfile('*.mesc');
+    fullPath = strcat(filePath,nameOfFile);
+
+    measurementUnitRange = input(sprintf('Define units to analyze\n'));
+    
     addpath('D:\analysis codes\Analysis\VR_Abhrajyoti\Raw_data_importers\NoRMCorre-master');
     % find number of layers
     fieldname = strcat('/MSession_0/MUnit_',num2str(units(1)),'/');
